@@ -3,4 +3,7 @@ b = int(input())
 c = int(input())
 d = int(input())
 
-print((a+d) - (b+c))
+if ((b+c)>(a+d)):
+    print((b+c) - (a+d))
+else:
+    print((a+d) - (b+c))
