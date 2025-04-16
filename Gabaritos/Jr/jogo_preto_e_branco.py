@@ -1,3 +1,5 @@
+#incompleto
+
 l, c = map(int, input().split())
 p = int(input())
 tabuleiro = [[-1 for _ in range(c+1)] for _ in range(l+1)]
