@@ -1,21 +1,31 @@
 def bfs(origem, destino):
-    visitado[origem] = True
+    fila = []
+    visitado = [False for _ in range(n+1)]
+    pai = [None for _ in range(n)]
+   
     fila.append(origem)
+    pai[origem]= -1
+    visitado[origem] = True
+
     while fila:
         atual = fila.pop(0)
         if atual==destino:
-            print("Cheguei")
+            caminho = []
+            while atual != -1:
+                caminho.append(atual)
+                atual=pai[atual]
+            caminho.reverse()
+            print(caminho)
             break
-        print(f"Passando por {atual}")
+
         for vizinho in grafo[atual]:
             if not visitado[vizinho]:
                 visitado[vizinho]=True
+                pai[vizinho]=atual
                 fila.append(vizinho)
 
 grafo= {}
 n = int(input())
-visitado = [False for _ in range(n+1)]
-fila = []
 
 for _ in range(n):
     x, y = map(int, input().split())
@@ -23,4 +33,4 @@ for _ in range(n):
     grafo.setdefault(y, []).append(x)
 
 print(grafo)
-bfs(1, 6)
+bfs(0, 6)
