@@ -5,5 +5,7 @@
         "deque": "cpp",
         "vector": "cpp",
         "algorithm": "cpp"
-    }
+    },
+    "editor.fontSize": 30,
+    "terminal.explorerKind": "external"
 }
