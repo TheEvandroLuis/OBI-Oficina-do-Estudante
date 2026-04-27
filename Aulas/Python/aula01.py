@@ -1,4 +1,10 @@
-n1 = int(input())
-n2 = int(input())
+x= int(input())
 
-print(n1+n2)
+if x>10:
+    print(">10")
+elif x<10:
+    print("<10")
+else:
+    print("=10")
+    
+print("FIM")

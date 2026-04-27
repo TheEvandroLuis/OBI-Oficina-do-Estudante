@@ -39,7 +39,7 @@ int main() {
             }
         }
         if(reuniao_infectada){
-            for (int pessoa : reuniao){
+            for (int pessoa : reuniao){ //for pessoa in reuniao:
                 infectados[pessoa]=1;
             }
         }
