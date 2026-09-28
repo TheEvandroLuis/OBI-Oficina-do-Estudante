@@ -2,12 +2,11 @@ import sys
 from collections import deque
 
 # Leitura otimizada
-entrada = sys.stdin.read().split()
-N = int(entrada[0])
-D = int(entrada[1])
-W = int(entrada[2])
+N = 6
+D = 2
+W = 100
 
-precos = [int(x) for x in entrada[3:]]
+precos = [65, 50, 50, 60, 45, 60]
 
 # 1. Soma de Prefixos (para soma de intervalos constante)
 prefix = [0] * (N + 1)
@@ -19,8 +18,11 @@ for i in range(N):
 d_sum = [0] * N
 for i in range(D - 1, N):
     d_sum[i] = prefix[i + 1] - prefix[i + 1 - D]
-    
-max_dias = 0
+
+print(prefix)
+print(d_sum)
+
+max_dias = D
 L = 0
 fila = deque()
 
@@ -60,4 +62,3 @@ for R in range(N):
         max_dias = tamanho_atual
         
 print(max_dias)
-fila
